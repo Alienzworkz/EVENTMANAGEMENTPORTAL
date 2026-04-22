@@ -6,6 +6,7 @@ import { formatDate, getInitials } from '../../lib/utils';
 import { ROLES } from '../../utils/constants';
 import { PageLoader } from '../../components/common/Loader';
 import toast from 'react-hot-toast';
+import { Calendar, Ticket, X } from 'lucide-react';
 
 const ManageUsers = () => {
   const [users, setUsers] = useState([]);
@@ -13,6 +14,9 @@ const ManageUsers = () => {
   const [search, setSearch] = useState('');
   const [roleFilter, setRoleFilter] = useState('all');
   const [pagination, setPagination] = useState({ current: 1, pages: 1, total: 0 });
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [userBookings, setUserBookings] = useState([]);
+  const [loadingBookings, setLoadingBookings] = useState(false);
 
   useEffect(() => {
     fetchUsers();
@@ -57,6 +61,19 @@ const ManageUsers = () => {
       fetchUsers(pagination.current);
     } catch (error) {
       toast.error(error.response?.data?.message || 'Failed to delete user');
+    }
+  };
+
+  const handleViewBookings = async (user) => {
+    setSelectedUser(user);
+    setLoadingBookings(true);
+    try {
+      const res = await adminService.getUserBookings(user._id);
+      setUserBookings(res.data.data);
+    } catch (error) {
+      toast.error('Failed to fetch user bookings');
+    } finally {
+      setLoadingBookings(false);
     }
   };
 
@@ -146,13 +163,22 @@ const ManageUsers = () => {
                     </td>
                     <td className="p-4 text-sm text-[hsl(var(--muted-foreground))]">{formatDate(u.createdAt)}</td>
                     <td className="p-4">
-                      <button
-                        onClick={() => handleDelete(u._id)}
-                        className="p-1.5 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-red-500 transition-all"
-                        title="Delete user"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => handleViewBookings(u)}
+                          className="p-1.5 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 text-blue-500 transition-all flex items-center gap-1 text-xs"
+                          title="View Bookings"
+                        >
+                          <Ticket className="w-4 h-4" /> Bookings
+                        </button>
+                        <button
+                          onClick={() => handleDelete(u._id)}
+                          className="p-1.5 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-red-500 transition-all"
+                          title="Delete user"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
                     </td>
                   </motion.tr>
                 ))}
@@ -184,6 +210,58 @@ const ManageUsers = () => {
             </div>
           )}
         </motion.div>
+      )}
+
+      {/* User Bookings Modal */}
+      {selectedUser && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="glass-card w-full max-w-2xl overflow-hidden max-h-[80vh] flex flex-col"
+          >
+            <div className="p-4 border-b border-[hsl(var(--border))] flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold">{selectedUser.name}'s Bookings</h3>
+                <p className="text-sm text-[hsl(var(--muted-foreground))]">{userBookings.length} total active bookings</p>
+              </div>
+              <button onClick={() => setSelectedUser(null)} className="p-2 rounded-lg hover:bg-[hsl(var(--muted))]">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            
+            <div className="p-4 overflow-y-auto">
+              {loadingBookings ? (
+                <div className="flex justify-center p-8"><PageLoader /></div>
+              ) : userBookings.length > 0 ? (
+                <div className="space-y-4">
+                  {userBookings.map((booking) => (
+                    <div key={booking._id} className="flex gap-4 p-4 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--muted)/0.3)]">
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-lg">{booking.event?.title}</h4>
+                        <div className="flex items-center gap-4 text-sm text-[hsl(var(--muted-foreground))] mt-2">
+                          <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> {formatDate(booking.event?.date)}</span>
+                          <span className="capitalize px-2 py-0.5 rounded-md bg-[hsl(var(--background))] border border-[hsl(var(--border))]">
+                            {booking.event?.category}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="font-medium text-lg">{booking.ticketCount} Tickets</div>
+                        <div className="text-sm text-[hsl(var(--muted-foreground))]">Status: <span className="text-emerald-500">{booking.status}</span></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-12">
+                  <Ticket className="w-12 h-12 text-[hsl(var(--muted-foreground))] mx-auto mb-3 opacity-50" />
+                  <p className="text-[hsl(var(--muted-foreground))]">This user hasn't booked any events yet.</p>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        </div>
       )}
     </div>
   );

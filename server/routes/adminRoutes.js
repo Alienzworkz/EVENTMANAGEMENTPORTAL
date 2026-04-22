@@ -5,6 +5,7 @@ const {
   deleteUser,
   getStats,
   getOrganizerStats,
+  getUserBookings,
 } = require('../controllers/adminController');
 const protect = require('../middleware/auth');
 const authorize = require('../middleware/roleCheck');
@@ -15,6 +16,7 @@ const router = express.Router();
 router.get('/users', protect, authorize('admin'), getUsers);
 router.put('/users/:id/role', protect, authorize('admin'), updateUserRole);
 router.delete('/users/:id', protect, authorize('admin'), deleteUser);
+router.get('/users/:id/bookings', protect, authorize('admin'), getUserBookings);
 router.get('/stats', protect, authorize('admin'), getStats);
 
 // Organizer stats

@@ -141,9 +141,14 @@ exports.getEventBookings = async (req, res, next) => {
       });
     }
 
-    const bookings = await Booking.find({ event: req.params.eventId })
-      .populate('user', 'name email phone avatar')
+    let bookings = await Booking.find({ event: req.params.eventId })
+      .populate('user', 'name email phone avatar role')
       .sort({ createdAt: -1 });
+
+    // Hide admins from organizers and typical users
+    if (req.user.role === 'organizer') {
+      bookings = bookings.filter((b) => b.user && b.user.role !== 'admin');
+    }
 
     res.status(200).json({
       success: true,

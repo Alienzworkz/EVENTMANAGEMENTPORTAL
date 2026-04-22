@@ -106,24 +106,7 @@ const Login = () => {
             <Link to="/register" className="text-primary-500 font-medium hover:underline">Sign up</Link>
           </p>
 
-          {/* Demo credentials */}
-          <div className="mt-6 p-4 rounded-xl bg-[hsl(var(--muted)/0.5)] border border-[hsl(var(--border)/0.5)]">
-            <p className="text-xs font-semibold mb-2 text-center">Demo Accounts</p>
-            <div className="space-y-1.5 text-xs text-[hsl(var(--muted-foreground))]">
-              <div className="flex justify-between">
-                <span>👑 Admin:</span>
-                <span className="font-mono">admin@eventrix.com / admin123</span>
-              </div>
-              <div className="flex justify-between">
-                <span>🧑‍💼 Organizer:</span>
-                <span className="font-mono">sarah@eventrix.com / organizer123</span>
-              </div>
-              <div className="flex justify-between">
-                <span>👤 Attendee:</span>
-                <span className="font-mono">alex@eventrix.com / attendee123</span>
-              </div>
-            </div>
-          </div>
+
         </div>
       </motion.div>
     </div>

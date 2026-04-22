@@ -244,3 +244,22 @@ exports.getOrganizerStats = async (req, res, next) => {
     next(error);
   }
 };
+
+// @desc    Get user's bookings
+// @route   GET /api/admin/users/:id/bookings
+// @access  Private (admin)
+exports.getUserBookings = async (req, res, next) => {
+  try {
+    const bookings = await Booking.find({ user: req.params.id })
+      .populate('event', 'title date location status category')
+      .sort({ createdAt: -1 });
+
+    res.status(200).json({
+      success: true,
+      data: bookings,
+      total: bookings.length,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
