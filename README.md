@@ -1,4 +1,4 @@
-# 🎯 Eventrix — Event Management Portal
+#  Eventrix — Event Management Portal
 
 ![Eventrix Banner](client/public/vite.svg) *Replace with actual banner screenshot*
 
@@ -6,41 +6,41 @@ Eventrix is a premium, full-stack, comprehensive Software as a Service (SaaS) Ev
 
 ---
 
-## 🎥 Project Videos
+##  Project Videos
 
 * **Code Explanation Video:** [Link to your YouTube/Vimeo video explaining the codebase]
 * **Project Overview Video:** [Link to your YouTube/Vimeo video demonstrating the UI & features]
 
-### 💡 How to Record Your Videos:
+###  How to Record Your Videos:
 1. **Code Walkthrough:** Use OBS Studio or Loom. Show your editor (`client` and `server` folders). Explain the MVC architecture in the backend, the React component structure, the Context API for state management, and the Recharts implementation.
 2. **Project Demo:** Open the app in the browser. Walk through a user journey: Register as an Organizer -> Create an event -> Log out -> Register as an Attendee -> Search for the event -> Book a ticket -> Check the dashboard. Switch to Admin to show the analytics module.
 
 ---
 
-## 🚀 Features by Role
+##  Features by Role
 
-### 👤 Attendee
+###  Attendee
 * **Authentication**: Secure sign-up and login utilizing JWT.
 * **Event Discovery**: Intelligently search and filter upcoming events by category, status, and custom search queries.
 * **Ticketing System**: View event capacity in real-time and effortlessly book digital tickets.
 * **Dashboard**: Track confirmed/pending bookings, view total expenditure, and see personal event stats via a clean graphical dashboard.
 * **Profile Management**: Update personal details and password.
 
-### 🧑‍💼 Organizer
+###  Organizer
 * **All Attendee Features** plus:
 * **Event Creation Studio**: Create rich events with dates, capacities, image URLs, and dynamic tagging.
 * **Event Management**: Edit event details, track real-time registration counts, or cancel events securely.
 * **Organizer Analytics**: Visualize event health via Recharts. See 'Events by Status' pie charts and track ticket revenue.
 * **Attendee Tracking**: See exactly who is attending your hosted events.
 
-### 👑 System Administrator
+###  System Administrator
 * **Global Analytics Dashboard**: Monitor total system health. View total users, global platform revenue, platform-wide bookings, and detailed category breakdowns.
 * **User Management System**: Upgrade users to 'Organizer' or 'Admin' roles, or prune accounts from the platform.
 * **Global Event Control**: Approve/reject events submitted by organizers, and force-delete non-compliant events.
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 **Frontend Architecture:**
 * React.js (via Vite)
@@ -59,7 +59,7 @@ Eventrix is a premium, full-stack, comprehensive Software as a Service (SaaS) Ev
 
 ---
 
-## 📦 Local Setup Instructions
+##  Local Setup Instructions
 
 ### Prerequisites
 * Node.js (v18 or higher)
@@ -98,7 +98,7 @@ Your app will be running at `http://localhost:5173`.
 
 ---
 
-## 📡 Deployment Guide
+##  Deployment Guide
 
 To deploy this application to production:
 
@@ -122,7 +122,7 @@ To deploy this application to production:
 
 ---
 
-## 🎨 Screenshots
+##  Screenshots
 
 *(Instructor Note: Take screenshots of these views and add them to your `client/public` folder, then update the paths below).*
 
