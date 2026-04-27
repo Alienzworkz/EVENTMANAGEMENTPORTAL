@@ -5,21 +5,18 @@
 Eventrix is a premium, full-stack, comprehensive Software as a Service (SaaS) Event Management platform built with the MERN stack. Designed specifically for Event Attendees, Organizers, and System Administrators, Eventrix provides a modern, fast, and secure way to manage the entire lifecycle of events—from creation to ticketing and analytics.
 
 ---
+## 🎥 Project Overview
+[![Watch Overview](https://img.youtube.com/vi/WSK5PCVrLRU/0.jpg)](https://youtu.be/WSK5PCVrLRU)
 
-## 🎥 Project Demo
+## 🎥 Project Demo(Backend):
 
 [![Watch Demo](https://img.youtube.com/vi/MMgkvfXM-KU/0.jpg)](https://youtu.be/MMgkvfXM-KU)
 
 ---
-## 🎥 Code Explanation (Frontend)
+## 🎥 Code Explanation (Frontend):
 
 [![Watch Frontend Explanation](https://img.youtube.com/vi/qb8Mjf8Zdms/0.jpg)](https://youtu.be/qb8Mjf8Zdms)
 
-## 🎥 Code Explanation (Backend)
-[Watch Video](https://youtu.be/MMgkvfXM-KU)
-
-## 🎥 Project Overview
-[![Watch Overview](https://img.youtube.com/vi/WSK5PCVrLRU/0.jpg)](https://youtu.be/WSK5PCVrLRU)
 
 ###  How to Record Your Videos:
 1. **Code Walkthrough:** Use OBS Studio or Loom. Show your editor (`client` and `server` folders). Explain the MVC architecture in the backend, the React component structure, the Context API for state management, and the Recharts implementation.
