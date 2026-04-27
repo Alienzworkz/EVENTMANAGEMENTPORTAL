@@ -13,7 +13,7 @@ Eventrix is a premium, full-stack, comprehensive Software as a Service (SaaS) Ev
 ---
 
 ## 🎥 Code Explanation (Frontend)
-[Watch Video](https://youtu.be/MMgkvfXM-KU)
+[Watch Video](https://youtu.be/qb8Mjf8Zdms)
 
 ## 🎥 Code Explanation (Backend)
 [Watch Video](https://youtu.be/MMgkvfXM-KU)
