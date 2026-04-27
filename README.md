@@ -6,17 +6,21 @@ Eventrix is a premium, full-stack, comprehensive Software as a Service (SaaS) Ev
 
 ---
 
+## 🎥 Project Demo
 
-##  Project Videos
+[![Watch Demo](https://img.youtube.com/vi/MMgkvfXM-KU/0.jpg)](https://youtu.be/MMgkvfXM-KU)
 
-### 🎥 Project Demo
+---
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/MMgkvfXM-KU" title="event management" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+## 🎥 Code Explanation (Frontend)
+[Watch Video](https://youtu.be/MMgkvfXM-KU)
 
-* **Code Explanation Video(Frontend):** https://youtu.be/MMgkvfXM-KU 
-* **Code Explanation Video(backend):** https://youtu.be/MMgkvfXM-KU
-* **Project Overview Video:** https://youtu.be/WSK5PCVrLRU
-* 
+## 🎥 Code Explanation (Backend)
+[Watch Video](https://youtu.be/MMgkvfXM-KU)
+
+## 🎥 Project Overview
+[![Watch Overview](https://img.youtube.com/vi/WSK5PCVrLRU/0.jpg)](https://youtu.be/WSK5PCVrLRU)
+
 ###  How to Record Your Videos:
 1. **Code Walkthrough:** Use OBS Studio or Loom. Show your editor (`client` and `server` folders). Explain the MVC architecture in the backend, the React component structure, the Context API for state management, and the Recharts implementation.
 2. **Project Demo:** Open the app in the browser. Walk through a user journey: Register as an Organizer -> Create an event -> Log out -> Register as an Attendee -> Search for the event -> Book a ticket -> Check the dashboard. Switch to Admin to show the analytics module.
