@@ -8,15 +8,10 @@ Eventrix is a premium, full-stack, comprehensive Software as a Service (SaaS) Ev
 ## 🎥 Project Overview
 [![Watch Overview](https://img.youtube.com/vi/WSK5PCVrLRU/0.jpg)](https://youtu.be/WSK5PCVrLRU)
 
-## 🎥 Project Demo(Backend):
-
-[![Watch Demo](https://img.youtube.com/vi/MMgkvfXM-KU/0.jpg)](https://youtu.be/MMgkvfXM-KU)
-
 ---
-## 🎥 Code Explanation (Frontend):
+## 🎥 Code Explanation (Frontend & Backend):
 
-[![Watch Frontend Explanation](https://img.youtube.com/vi/qb8Mjf8Zdms/0.jpg)](https://youtu.be/WrF0c_Htmg0)
-
+[![Watch Frontend & Backend Explanation](https://img.youtube.com/vi/WrF0c_Htmg0/0.jpg)](https://youtu.be/WrF0c_Htmg0)
 
 ###  How to Record Your Videos:
 1. **Code Walkthrough:** Use OBS Studio or Loom. Show your editor (`client` and `server` folders). Explain the MVC architecture in the backend, the React component structure, the Context API for state management, and the Recharts implementation.
